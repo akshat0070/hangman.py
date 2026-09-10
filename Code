@@ -55,12 +55,15 @@ while wrong_guesses < 6:
         print("Correct guess!")
 
         # Reveal the guessed letter
-        for i in range(len(word)):
-            if word[i] == guess:
-                hidden_word[i] = guess
+        found = False
 
-    else:
-        wrong_guesses = wrong_guesses + 1
+for i in range(len(word)):
+    if word[i] == guess:
+        hidden_word[i] = guess
+        found = True
+
+if not found:
+    wrong_guesses += 1
         print("Wrong guess!")
         print("Wrong guesses:", wrong_guesses, "/ 6")
 
